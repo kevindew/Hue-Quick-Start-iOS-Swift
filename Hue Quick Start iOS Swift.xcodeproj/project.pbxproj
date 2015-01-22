@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE625B571A7078D8004296E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B561A7078D8004296E9 /* AppDelegate.swift */; };
+		DE625B5A1A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE625B581A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld */; };
+		DE625B5C1A7078D8004296E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B5B1A7078D8004296E9 /* ViewController.swift */; };
+		DE625B5F1A7078D8004296E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE625B5D1A7078D8004296E9 /* Main.storyboard */; };
+		DE625B611A7078D8004296E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE625B601A7078D8004296E9 /* Images.xcassets */; };
+		DE625B641A7078D8004296E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE625B621A7078D8004296E9 /* LaunchScreen.xib */; };
+		DE625B701A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B6F1A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE625B6A1A7078D8004296E9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE625B491A7078D8004296E9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE625B501A7078D8004296E9;
+			remoteInfo = "Hue Quick Start iOS Swift";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hue Quick Start iOS Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE625B551A7078D8004296E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE625B561A7078D8004296E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE625B591A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hue_Quick_Start_iOS_Swift.xcdatamodel; sourceTree = "<group>"; };
+		DE625B5B1A7078D8004296E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE625B5E1A7078D8004296E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DE625B601A7078D8004296E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DE625B631A7078D8004296E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DE625B691A7078D8004296E9 /* Hue Quick Start iOS SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hue Quick Start iOS SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE625B6E1A7078D8004296E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE625B6F1A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hue_Quick_Start_iOS_SwiftTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE625B4E1A7078D8004296E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE625B661A7078D8004296E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE625B481A7078D8004296E9 = {
+			isa = PBXGroup;
+			children = (
+				DE625B531A7078D8004296E9 /* Hue Quick Start iOS Swift */,
+				DE625B6C1A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */,
+				DE625B521A7078D8004296E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE625B521A7078D8004296E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */,
+				DE625B691A7078D8004296E9 /* Hue Quick Start iOS SwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE625B531A7078D8004296E9 /* Hue Quick Start iOS Swift */ = {
+			isa = PBXGroup;
+			children = (
+				DE625B561A7078D8004296E9 /* AppDelegate.swift */,
+				DE625B5B1A7078D8004296E9 /* ViewController.swift */,
+				DE625B5D1A7078D8004296E9 /* Main.storyboard */,
+				DE625B601A7078D8004296E9 /* Images.xcassets */,
+				DE625B621A7078D8004296E9 /* LaunchScreen.xib */,
+				DE625B581A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld */,
+				DE625B541A7078D8004296E9 /* Supporting Files */,
+			);
+			path = "Hue Quick Start iOS Swift";
+			sourceTree = "<group>";
+		};
+		DE625B541A7078D8004296E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE625B551A7078D8004296E9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE625B6C1A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE625B6F1A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift */,
+				DE625B6D1A7078D8004296E9 /* Supporting Files */,
+			);
+			path = "Hue Quick Start iOS SwiftTests";
+			sourceTree = "<group>";
+		};
+		DE625B6D1A7078D8004296E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE625B6E1A7078D8004296E9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE625B501A7078D8004296E9 /* Hue Quick Start iOS Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE625B731A7078D8004296E9 /* Build configuration list for PBXNativeTarget "Hue Quick Start iOS Swift" */;
+			buildPhases = (
+				DE625B4D1A7078D8004296E9 /* Sources */,
+				DE625B4E1A7078D8004296E9 /* Frameworks */,
+				DE625B4F1A7078D8004296E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Hue Quick Start iOS Swift";
+			productName = "Hue Quick Start iOS Swift";
+			productReference = DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE625B681A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE625B761A7078D8004296E9 /* Build configuration list for PBXNativeTarget "Hue Quick Start iOS SwiftTests" */;
+			buildPhases = (
+				DE625B651A7078D8004296E9 /* Sources */,
+				DE625B661A7078D8004296E9 /* Frameworks */,
+				DE625B671A7078D8004296E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE625B6B1A7078D8004296E9 /* PBXTargetDependency */,
+			);
+			name = "Hue Quick Start iOS SwiftTests";
+			productName = "Hue Quick Start iOS SwiftTests";
+			productReference = DE625B691A7078D8004296E9 /* Hue Quick Start iOS SwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE625B491A7078D8004296E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = KevinDew;
+				TargetAttributes = {
+					DE625B501A7078D8004296E9 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					DE625B681A7078D8004296E9 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = DE625B501A7078D8004296E9;
+					};
+				};
+			};
+			buildConfigurationList = DE625B4C1A7078D8004296E9 /* Build configuration list for PBXProject "Hue Quick Start iOS Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE625B481A7078D8004296E9;
+			productRefGroup = DE625B521A7078D8004296E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE625B501A7078D8004296E9 /* Hue Quick Start iOS Swift */,
+				DE625B681A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE625B4F1A7078D8004296E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE625B5F1A7078D8004296E9 /* Main.storyboard in Resources */,
+				DE625B641A7078D8004296E9 /* LaunchScreen.xib in Resources */,
+				DE625B611A7078D8004296E9 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE625B671A7078D8004296E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE625B4D1A7078D8004296E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE625B5C1A7078D8004296E9 /* ViewController.swift in Sources */,
+				DE625B571A7078D8004296E9 /* AppDelegate.swift in Sources */,
+				DE625B5A1A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE625B651A7078D8004296E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE625B701A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE625B6B1A7078D8004296E9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE625B501A7078D8004296E9 /* Hue Quick Start iOS Swift */;
+			targetProxy = DE625B6A1A7078D8004296E9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE625B5D1A7078D8004296E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE625B5E1A7078D8004296E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DE625B621A7078D8004296E9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE625B631A7078D8004296E9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE625B711A7078D8004296E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE625B721A7078D8004296E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE625B741A7078D8004296E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Hue Quick Start iOS Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE625B751A7078D8004296E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Hue Quick Start iOS Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DE625B771A7078D8004296E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hue Quick Start iOS SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hue Quick Start iOS Swift.app/Hue Quick Start iOS Swift";
+			};
+			name = Debug;
+		};
+		DE625B781A7078D8004296E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Hue Quick Start iOS SwiftTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hue Quick Start iOS Swift.app/Hue Quick Start iOS Swift";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE625B4C1A7078D8004296E9 /* Build configuration list for PBXProject "Hue Quick Start iOS Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE625B711A7078D8004296E9 /* Debug */,
+				DE625B721A7078D8004296E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE625B731A7078D8004296E9 /* Build configuration list for PBXNativeTarget "Hue Quick Start iOS Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE625B741A7078D8004296E9 /* Debug */,
+				DE625B751A7078D8004296E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DE625B761A7078D8004296E9 /* Build configuration list for PBXNativeTarget "Hue Quick Start iOS SwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE625B771A7078D8004296E9 /* Debug */,
+				DE625B781A7078D8004296E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE625B581A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE625B591A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodel */,
+			);
+			currentVersion = DE625B591A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodel */;
+			path = Hue_Quick_Start_iOS_Swift.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DE625B491A7078D8004296E9 /* Project object */;
+}
