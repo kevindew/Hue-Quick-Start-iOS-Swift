@@ -8,36 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		DE625B571A7078D8004296E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B561A7078D8004296E9 /* AppDelegate.swift */; };
-		DE625B5A1A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE625B581A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld */; };
-		DE625B5C1A7078D8004296E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B5B1A7078D8004296E9 /* ViewController.swift */; };
 		DE625B5F1A7078D8004296E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE625B5D1A7078D8004296E9 /* Main.storyboard */; };
 		DE625B611A7078D8004296E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE625B601A7078D8004296E9 /* Images.xcassets */; };
 		DE625B641A7078D8004296E9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE625B621A7078D8004296E9 /* LaunchScreen.xib */; };
-		DE625B701A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B6F1A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift */; };
+		DE625B941A70794A004296E9 /* HueSDK_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE625B931A70794A004296E9 /* HueSDK_iOS.framework */; };
+		DE625BB11A707BE7004296E9 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BA31A707BE7004296E9 /* DDAbstractDatabaseLogger.m */; };
+		DE625BB21A707BE7004296E9 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BA51A707BE7004296E9 /* DDASLLogger.m */; };
+		DE625BB31A707BE7004296E9 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BA71A707BE7004296E9 /* DDFileLogger.m */; };
+		DE625BB41A707BE7004296E9 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BA91A707BE7004296E9 /* DDLog.m */; };
+		DE625BB51A707BE7004296E9 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BAB1A707BE7004296E9 /* DDTTYLogger.m */; };
+		DE625BB61A707BE7004296E9 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BAE1A707BE7004296E9 /* ContextFilterLogFormatter.m */; };
+		DE625BB71A707BE7004296E9 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BB01A707BE7004296E9 /* DispatchQueueLogFormatter.m */; };
+		DE625BB91A707E59004296E9 /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625BB81A707E59004296E9 /* ControlLightsViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		DE625B6A1A7078D8004296E9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DE625B491A7078D8004296E9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DE625B501A7078D8004296E9;
-			remoteInfo = "Hue Quick Start iOS Swift";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hue Quick Start iOS Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE625B551A7078D8004296E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE625B561A7078D8004296E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE625B591A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hue_Quick_Start_iOS_Swift.xcdatamodel; sourceTree = "<group>"; };
-		DE625B5B1A7078D8004296E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DE625B5E1A7078D8004296E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE625B601A7078D8004296E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DE625B631A7078D8004296E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		DE625B691A7078D8004296E9 /* Hue Quick Start iOS SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hue Quick Start iOS SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE625B6E1A7078D8004296E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DE625B6F1A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hue_Quick_Start_iOS_SwiftTests.swift; sourceTree = "<group>"; };
+		DE625B931A70794A004296E9 /* HueSDK_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_iOS.framework; sourceTree = "<group>"; };
+		DE625B9E1A707BC3004296E9 /* Hue Quick Start iOS Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hue Quick Start iOS Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		DE625BA21A707BE7004296E9 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		DE625BA31A707BE7004296E9 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		DE625BA41A707BE7004296E9 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		DE625BA51A707BE7004296E9 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		DE625BA61A707BE7004296E9 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		DE625BA71A707BE7004296E9 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		DE625BA81A707BE7004296E9 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		DE625BA91A707BE7004296E9 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		DE625BAA1A707BE7004296E9 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		DE625BAB1A707BE7004296E9 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		DE625BAD1A707BE7004296E9 /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		DE625BAE1A707BE7004296E9 /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		DE625BAF1A707BE7004296E9 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		DE625BB01A707BE7004296E9 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		DE625BB81A707E59004296E9 /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,13 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE625B661A7078D8004296E9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				DE625B941A70794A004296E9 /* HueSDK_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +63,8 @@
 		DE625B481A7078D8004296E9 = {
 			isa = PBXGroup;
 			children = (
+				DE625B791A7078F5004296E9 /* Framework */,
 				DE625B531A7078D8004296E9 /* Hue Quick Start iOS Swift */,
-				DE625B6C1A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */,
 				DE625B521A7078D8004296E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,7 +73,6 @@
 			isa = PBXGroup;
 			children = (
 				DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */,
-				DE625B691A7078D8004296E9 /* Hue Quick Start iOS SwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,12 +81,12 @@
 			isa = PBXGroup;
 			children = (
 				DE625B561A7078D8004296E9 /* AppDelegate.swift */,
-				DE625B5B1A7078D8004296E9 /* ViewController.swift */,
 				DE625B5D1A7078D8004296E9 /* Main.storyboard */,
 				DE625B601A7078D8004296E9 /* Images.xcassets */,
 				DE625B621A7078D8004296E9 /* LaunchScreen.xib */,
-				DE625B581A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld */,
 				DE625B541A7078D8004296E9 /* Supporting Files */,
+				DE625B9E1A707BC3004296E9 /* Hue Quick Start iOS Swift-Bridging-Header.h */,
+				DE625BB81A707E59004296E9 /* ControlLightsViewController.swift */,
 			);
 			path = "Hue Quick Start iOS Swift";
 			sourceTree = "<group>";
@@ -98,21 +99,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DE625B6C1A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */ = {
+		DE625B791A7078F5004296E9 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				DE625B6F1A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift */,
-				DE625B6D1A7078D8004296E9 /* Supporting Files */,
+				DE625BA11A707BE7004296E9 /* Lumberjack */,
+				DE625B931A70794A004296E9 /* HueSDK_iOS.framework */,
 			);
-			path = "Hue Quick Start iOS SwiftTests";
+			name = Framework;
 			sourceTree = "<group>";
 		};
-		DE625B6D1A7078D8004296E9 /* Supporting Files */ = {
+		DE625BA11A707BE7004296E9 /* Lumberjack */ = {
 			isa = PBXGroup;
 			children = (
-				DE625B6E1A7078D8004296E9 /* Info.plist */,
+				DE625BA21A707BE7004296E9 /* DDAbstractDatabaseLogger.h */,
+				DE625BA31A707BE7004296E9 /* DDAbstractDatabaseLogger.m */,
+				DE625BA41A707BE7004296E9 /* DDASLLogger.h */,
+				DE625BA51A707BE7004296E9 /* DDASLLogger.m */,
+				DE625BA61A707BE7004296E9 /* DDFileLogger.h */,
+				DE625BA71A707BE7004296E9 /* DDFileLogger.m */,
+				DE625BA81A707BE7004296E9 /* DDLog.h */,
+				DE625BA91A707BE7004296E9 /* DDLog.m */,
+				DE625BAA1A707BE7004296E9 /* DDTTYLogger.h */,
+				DE625BAB1A707BE7004296E9 /* DDTTYLogger.m */,
+				DE625BAC1A707BE7004296E9 /* Extensions */,
 			);
-			name = "Supporting Files";
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		DE625BAC1A707BE7004296E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE625BAD1A707BE7004296E9 /* ContextFilterLogFormatter.h */,
+				DE625BAE1A707BE7004296E9 /* ContextFilterLogFormatter.m */,
+				DE625BAF1A707BE7004296E9 /* DispatchQueueLogFormatter.h */,
+				DE625BB01A707BE7004296E9 /* DispatchQueueLogFormatter.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,24 +157,6 @@
 			productReference = DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DE625B681A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DE625B761A7078D8004296E9 /* Build configuration list for PBXNativeTarget "Hue Quick Start iOS SwiftTests" */;
-			buildPhases = (
-				DE625B651A7078D8004296E9 /* Sources */,
-				DE625B661A7078D8004296E9 /* Frameworks */,
-				DE625B671A7078D8004296E9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DE625B6B1A7078D8004296E9 /* PBXTargetDependency */,
-			);
-			name = "Hue Quick Start iOS SwiftTests";
-			productName = "Hue Quick Start iOS SwiftTests";
-			productReference = DE625B691A7078D8004296E9 /* Hue Quick Start iOS SwiftTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,10 +168,6 @@
 				TargetAttributes = {
 					DE625B501A7078D8004296E9 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					DE625B681A7078D8004296E9 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = DE625B501A7078D8004296E9;
 					};
 				};
 			};
@@ -185,7 +185,6 @@
 			projectRoot = "";
 			targets = (
 				DE625B501A7078D8004296E9 /* Hue Quick Start iOS Swift */,
-				DE625B681A7078D8004296E9 /* Hue Quick Start iOS SwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,13 +200,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DE625B671A7078D8004296E9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -215,29 +207,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE625B5C1A7078D8004296E9 /* ViewController.swift in Sources */,
+				DE625BB41A707BE7004296E9 /* DDLog.m in Sources */,
+				DE625BB21A707BE7004296E9 /* DDASLLogger.m in Sources */,
+				DE625BB91A707E59004296E9 /* ControlLightsViewController.swift in Sources */,
 				DE625B571A7078D8004296E9 /* AppDelegate.swift in Sources */,
-				DE625B5A1A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DE625B651A7078D8004296E9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE625B701A7078D8004296E9 /* Hue_Quick_Start_iOS_SwiftTests.swift in Sources */,
+				DE625BB71A707BE7004296E9 /* DispatchQueueLogFormatter.m in Sources */,
+				DE625BB11A707BE7004296E9 /* DDAbstractDatabaseLogger.m in Sources */,
+				DE625BB51A707BE7004296E9 /* DDTTYLogger.m in Sources */,
+				DE625BB31A707BE7004296E9 /* DDFileLogger.m in Sources */,
+				DE625BB61A707BE7004296E9 /* ContextFilterLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		DE625B6B1A7078D8004296E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DE625B501A7078D8004296E9 /* Hue Quick Start iOS Swift */;
-			targetProxy = DE625B6A1A7078D8004296E9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE625B5D1A7078D8004296E9 /* Main.storyboard */ = {
@@ -342,9 +324,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Hue Quick Start iOS Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hue Quick Start iOS Swift/Hue Quick Start iOS Swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,43 +342,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Hue Quick Start iOS Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		DE625B771A7078D8004296E9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Hue Quick Start iOS SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hue Quick Start iOS Swift.app/Hue Quick Start iOS Swift";
-			};
-			name = Debug;
-		};
-		DE625B781A7078D8004296E9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Hue Quick Start iOS SwiftTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hue Quick Start iOS Swift.app/Hue Quick Start iOS Swift";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hue Quick Start iOS Swift/Hue Quick Start iOS Swift-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -412,28 +375,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		DE625B761A7078D8004296E9 /* Build configuration list for PBXNativeTarget "Hue Quick Start iOS SwiftTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DE625B771A7078D8004296E9 /* Debug */,
-				DE625B781A7078D8004296E9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		DE625B581A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				DE625B591A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodel */,
-			);
-			currentVersion = DE625B591A7078D8004296E9 /* Hue_Quick_Start_iOS_Swift.xcdatamodel */;
-			path = Hue_Quick_Start_iOS_Swift.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = DE625B491A7078D8004296E9 /* Project object */;
 }
