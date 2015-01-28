@@ -23,6 +23,32 @@
             </objects>
             <point key="canvasLocation" x="498" y="339"/>
         </scene>
+        <!--Bridge Selection View Controller-->
+        <scene sceneID="WNe-tM-m7P">
+            <objects>
+                <tableViewController storyboardIdentifier="BridgeSelection" id="o8O-fY-Mok" customClass="BridgeSelectionViewController" customModule="Hue_Quick_Start_iOS_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4ih-Fb-5Cu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jQZ-mh-WLe">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jQZ-mh-WLe" id="Zcj-Xr-al8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="o8O-fY-Mok" id="CQg-tI-pcp"/>
+                            <outlet property="delegate" destination="o8O-fY-Mok" id="vsm-am-aZo"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8c-YM-4cC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="362"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="88M-7i-3uX">
             <objects>

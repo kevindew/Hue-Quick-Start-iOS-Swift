@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Create sdk instance
     let phHueSdk:PHHueSDK = PHHueSDK()
     var window: UIWindow?
+    var navigationController: UINavigationController?
     var noConnectionAlert: UIAlertController?
     var noBridgeFoundAlert: UIAlertController?
     var authenticationFailedAlert: UIAlertView?
@@ -22,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         phHueSdk.startUpSDK()
         phHueSdk.enableLogging(true)
         let notificationManager = PHNotificationManager.defaultManager()
+        
+        self.navigationController = window!.rootViewController as? UINavigationController
         
         // The SDK will send the following notifications in response to events:
         //
@@ -90,18 +93,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkConnectionState()
     }
     
-    
     ///  Notification receiver for failed local authentication
     func notAuthenticated() {
         // We are not authenticated so we start the authentication process
         
         // Move to main screen (as you can't control lights when not connected)
-        let navigationController = window!.rootViewController as UINavigationController
-        navigationController.popToRootViewControllerAnimated(false)
+        navigationController!.popToRootViewControllerAnimated(false)
         
         // Dismiss modal views when connection is lost
-        if navigationController.presentedViewController != nil {
-            navigationController.dismissViewControllerAnimated(true, completion: nil)
+        if navigationController!.presentedViewController != nil {
+            navigationController!.dismissViewControllerAnimated(true, completion: nil)
         }
         
         // Remove no connection alert
@@ -116,16 +117,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func checkConnectionState() {
         if !phHueSdk.localConnected() {
             // Dismiss modal views when connection is lost
-            let navigationController = window!.rootViewController as UINavigationController
             
-            if navigationController.presentedViewController != nil {
-                navigationController.dismissViewControllerAnimated(true, completion: nil)
+            if navigationController!.presentedViewController != nil {
+                navigationController!.dismissViewControllerAnimated(true, completion: nil)
             }
             
             // No connection at all, show connection popup
             
             if noConnectionAlert == nil {
-                navigationController.popToRootViewControllerAnimated(true)
+                navigationController!.popToRootViewControllerAnimated(true)
                 
                 // Showing popup, so remove this view
                 removeLoadingView()
@@ -154,18 +154,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Retry, just wait for the heartbeat to finish
             self.showLoadingViewWithText(NSLocalizedString("Connecting...", comment: "Connecting text"))
         }
+        noConnectionAlert!.addAction(reconnectAction)
+        
         let newBridgeAction = UIAlertAction(
             title: NSLocalizedString("Find new bridge", comment: "No connection find new bridge button"),
             style: .Default
         ) { (_) in
             self.searchForBridgeLocal()
         }
+        noConnectionAlert!.addAction(newBridgeAction)
+        
         let cancelAction = UIAlertAction(
             title: NSLocalizedString("Cancel", comment: "No bridge found alert cancel button"),
             style: .Cancel
         ) { (_) in
             self.disableLocalHeartbeat()
         }
+        noConnectionAlert!.addAction(cancelAction)
+        window!.rootViewController!.presentViewController(noConnectionAlert!, animated: true, completion: nil)
     }
     
     // MARK: Heartbeat control
@@ -201,16 +207,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Start search
         let bridgeSearch = PHBridgeSearching(upnpSearch: true, andPortalSearch: true, andIpAdressSearch: true)
-        bridgeSearch.startSearchWithCompletionHandler() { (bridgesFound) in
+        bridgeSearch.startSearchWithCompletionHandler { (bridgesFound: [NSObject: AnyObject]!) -> () in
             // Done with search, remove loading view
             self.removeLoadingView()
             
             // The search is complete, check whether we found a bridge
             if bridgesFound.count > 0 {
                 // Results were found, show options to user (from a user point of view, you should select automatically when there is only one bridge found)
-                // @todo bridge view controller
-                
-                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let bridgeViewController = storyboard.instantiateViewControllerWithIdentifier("BridgeSelection") as BridgeSelectionViewController
+                let navController = UINavigationController(rootViewController: bridgeViewController)
+                self.navigationController!.presentViewController(navController, animated: true, completion: nil)
+
             } else {
                 // No bridge was found was found. Tell the user and offer to retry..
                 
@@ -220,8 +228,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     preferredStyle: .Alert
                 )
                 
-                // @todo retry and cancel actions
-        
+                let retryAction = UIAlertAction(
+                    title: NSLocalizedString("Rertry", comment: "No bridge found alert retry button"),
+                    style: .Default
+                ) { (_) in
+                    self.searchForBridgeLocal()
+                }
+                self.noBridgeFoundAlert!.addAction(retryAction)
+                let cancelAction = UIAlertAction(
+                    title: NSLocalizedString("Cancel", comment: "No bridge found alert cancel button"),
+                    style: .Cancel
+                ) { (_) in
+                    self.disableLocalHeartbeat()
+                }
+                self.noBridgeFoundAlert!.addAction(cancelAction)
+                self.window?.rootViewController?.presentViewController(self.noBridgeFoundAlert!, animated: true, completion: nil)
             }
             
         }
