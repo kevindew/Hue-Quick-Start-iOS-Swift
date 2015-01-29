@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewControllerDelegate {
 
     // Create sdk instance
     let phHueSdk:PHHueSDK = PHHueSDK()
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         phHueSdk.enableLogging(true)
         let notificationManager = PHNotificationManager.defaultManager()
         
-        self.navigationController = window!.rootViewController as? UINavigationController
+        navigationController = window!.rootViewController as? UINavigationController
         
         // The SDK will send the following notifications in response to events:
         //
@@ -110,7 +110,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         noConnectionAlert = nil
         
         // Start local authenticion process
-        // TODO: [self performSelector:@selector(doAuthentication) withObject:nil afterDelay:0.5];
+        let delay = 0.5 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.doAuthentication()
+        }
     }
     
     /// Checks if we are currently connected to the bridge locally and if not, it will show an error when the error is not already shown.
@@ -141,7 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     /// Shows the first no connection alert with more connection options
     func showNoConnectionDialog() {
-        self.noConnectionAlert = UIAlertController(
+        noConnectionAlert = UIAlertController(
             title: NSLocalizedString("No Connection", comment: "No connection alert title"),
             message: NSLocalizedString("Connection to bridge is lost", comment: "No Connection alert message"),
             preferredStyle: .Alert
@@ -216,6 +220,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // Results were found, show options to user (from a user point of view, you should select automatically when there is only one bridge found)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let bridgeViewController = storyboard.instantiateViewControllerWithIdentifier("BridgeSelection") as BridgeSelectionViewController
+                bridgeViewController.bridgesFound = bridgesFound
+                bridgeViewController.delegate = self
                 let navController = UINavigationController(rootViewController: bridgeViewController)
                 self.navigationController!.presentViewController(navController, animated: true, completion: nil)
 
@@ -242,22 +248,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.disableLocalHeartbeat()
                 }
                 self.noBridgeFoundAlert!.addAction(cancelAction)
-                self.window?.rootViewController?.presentViewController(self.noBridgeFoundAlert!, animated: true, completion: nil)
+                self.window!.rootViewController!.presentViewController(self.noBridgeFoundAlert!, animated: true, completion: nil)
             }
-            
         }
-        
-        
     }
     
-    // Delegate method for BridgeSelectionViewController which is invoked when a bridge is selected
+    /// Delegate method for BridgeSelectionViewController which is invoked when a bridge is selected
     func bridgeSelectedWithIpAddress(ipAddress:String, andMacAddress macAddress:String) {
+        // Removing the selection view controller takes us to the 'normal' UI view
+        window!.rootViewController! .dismissViewControllerAnimated(true, completion: nil)
+        
+        // Show a connecting view while we try to connect to the bridge
+        showLoadingViewWithText(NSLocalizedString("Connecting", comment: "Connecting text"))
+        
+        // Set the username, ipaddress and mac address, as the bridge properties that the SDK framework will use
+        phHueSdk.setBridgeToUseWithIpAddress(ipAddress, macAddress: macAddress)
+        
+        // Setting the hearbeat running will cause the SDK to regularly update the cache with the status of the bridge resources
+        let delay = 1 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.enableLocalHeartbeat()
+        }
     }
     
     // MARK: Bridge authentication
     
-    // Start the local authentication process
+    /// Start the local authentication process
     func doAuthentication() {
+        disableLocalHeartbeat()
+        
+        // To be certain that we own this bridge we must manually push link it. Here we display the view to do this.
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let pushLinkViewController = storyboard.instantiateViewControllerWithIdentifier("BridgePushLink") as BridgePushLinkViewController
+        
+        navigationController?.presentViewController(
+            pushLinkViewController,
+            animated: true,
+            completion: {(bool) in
+                pushLinkViewController.startPushLinking()
+        })
     }
     
     // Delegate method for PHBridgePushLinkViewController which is invoked if the pushlinking was successfull
@@ -266,11 +296,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // Delegate method for PHBridgePushLinkViewController which is invoked if the pushlinking was not successfull
     func pushlinkFailed(error: PHError) {
-    }
-    
-    // MARK: Alertview delegate
-    
-    func alertView(alertView:UIAlertView, clickedButtonAtIndex buttonIndex:Int) {
     }
     
     // MARK: - Loading view

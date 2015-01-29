@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DE08E34A1A78132400A74A75 /* BridgeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE08E3491A78132400A74A75 /* BridgeSelectionViewController.swift */; };
 		DE625B571A7078D8004296E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625B561A7078D8004296E9 /* AppDelegate.swift */; };
 		DE625B5F1A7078D8004296E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE625B5D1A7078D8004296E9 /* Main.storyboard */; };
 		DE625B611A7078D8004296E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE625B601A7078D8004296E9 /* Images.xcassets */; };
@@ -21,10 +20,12 @@
 		DE625BB61A707BE7004296E9 /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BAE1A707BE7004296E9 /* ContextFilterLogFormatter.m */; };
 		DE625BB71A707BE7004296E9 /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = DE625BB01A707BE7004296E9 /* DispatchQueueLogFormatter.m */; };
 		DE625BB91A707E59004296E9 /* ControlLightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE625BB81A707E59004296E9 /* ControlLightsViewController.swift */; };
+		DE67127D1A79B1B500ED6035 /* BridgePushLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67127C1A79B1B500ED6035 /* BridgePushLinkViewController.swift */; };
+		DE6712811A79B7A300ED6035 /* BridgeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6712801A79B7A300ED6035 /* BridgeSelectionViewController.swift */; };
+		DE6712831A79B8EE00ED6035 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6712821A79B8EE00ED6035 /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		DE08E3491A78132400A74A75 /* BridgeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeSelectionViewController.swift; sourceTree = "<group>"; };
 		DE625B511A7078D8004296E9 /* Hue Quick Start iOS Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hue Quick Start iOS Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE625B551A7078D8004296E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE625B561A7078D8004296E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +49,9 @@
 		DE625BAF1A707BE7004296E9 /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		DE625BB01A707BE7004296E9 /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		DE625BB81A707E59004296E9 /* ControlLightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlLightsViewController.swift; sourceTree = "<group>"; };
+		DE67127C1A79B1B500ED6035 /* BridgePushLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgePushLinkViewController.swift; sourceTree = "<group>"; };
+		DE6712801A79B7A300ED6035 /* BridgeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeSelectionViewController.swift; sourceTree = "<group>"; };
+		DE6712821A79B8EE00ED6035 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +93,9 @@
 				DE625B541A7078D8004296E9 /* Supporting Files */,
 				DE625B9E1A707BC3004296E9 /* Hue Quick Start iOS Swift-Bridging-Header.h */,
 				DE625BB81A707E59004296E9 /* ControlLightsViewController.swift */,
-				DE08E3491A78132400A74A75 /* BridgeSelectionViewController.swift */,
+				DE67127C1A79B1B500ED6035 /* BridgePushLinkViewController.swift */,
+				DE6712801A79B7A300ED6035 /* BridgeSelectionViewController.swift */,
+				DE6712821A79B8EE00ED6035 /* LoadingViewController.swift */,
 			);
 			path = "Hue Quick Start iOS Swift";
 			sourceTree = "<group>";
@@ -217,9 +223,11 @@
 				DE625BB71A707BE7004296E9 /* DispatchQueueLogFormatter.m in Sources */,
 				DE625BB11A707BE7004296E9 /* DDAbstractDatabaseLogger.m in Sources */,
 				DE625BB51A707BE7004296E9 /* DDTTYLogger.m in Sources */,
+				DE6712811A79B7A300ED6035 /* BridgeSelectionViewController.swift in Sources */,
 				DE625BB31A707BE7004296E9 /* DDFileLogger.m in Sources */,
-				DE08E34A1A78132400A74A75 /* BridgeSelectionViewController.swift in Sources */,
+				DE67127D1A79B1B500ED6035 /* BridgePushLinkViewController.swift in Sources */,
 				DE625BB61A707BE7004296E9 /* ContextFilterLogFormatter.m in Sources */,
+				DE6712831A79B8EE00ED6035 /* LoadingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
