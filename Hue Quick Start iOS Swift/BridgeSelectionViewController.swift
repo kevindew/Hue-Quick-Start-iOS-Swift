@@ -2,6 +2,8 @@
 //  BridgeSelectionViewController.swift
 //  Hue Quick Start iOS Swift
 //
+//  Ported from: https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/blob/master/QuickStartApp_iOS/SDKWizard/PHBridgeSelectionViewController.m
+//
 //  Created by Kevin Dew on 29/01/2015.
 //  Copyright (c) 2015 KevinDew. All rights reserved.
 //
@@ -14,7 +16,7 @@ protocol BridgeSelectionViewControllerDelegate {
 
 class BridgeSelectionViewController: UITableViewController {
     
-    var bridgesFound: [NSObject: AnyObject]?
+    var bridgesFound: [String: String]?
     var delegate: BridgeSelectionViewControllerDelegate?
     
     override func viewDidLoad() {
@@ -56,17 +58,24 @@ class BridgeSelectionViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         // Sort bridges by mac address
-        let sortedKeys = bridgesFound!.keys
+        let keys = [String](bridgesFound!.keys)
+        let sortedKeys = keys.sorted { $0.caseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending }
         
-//        let mac = sortedKeys[indexPath.row]
-//        let ip = bridgesFound![mac]
+        let mac = sortedKeys[indexPath.row]
+        let ip = bridgesFound![mac]
         
-        cell.textLabel?.text = "test"
-        cell.detailTextLabel?.text = "test"
+        cell.textLabel?.text = mac
+        cell.detailTextLabel?.text = ip
 
         return cell
     }
 
+    override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Please select a SmartBridge to use for this application"
+    }
+    
+    // MARK: Table View Delegate
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

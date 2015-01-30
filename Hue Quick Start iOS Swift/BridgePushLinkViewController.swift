@@ -1,6 +1,8 @@
 //
 //  BridgePushLinkViewController.swift
 //  Hue Quick Start iOS Swift
+// 
+//  Ported from: https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/blob/master/QuickStartApp_iOS/SDKWizard/PHBridgePushLinkViewController.m
 //
 //  Created by Kevin Dew on 29/01/2015.
 //  Copyright (c) 2015 KevinDew. All rights reserved.

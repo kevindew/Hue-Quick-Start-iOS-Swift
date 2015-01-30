@@ -1,6 +1,8 @@
 //
 //  AppDelegate.swift
 //  Hue Quick Start iOS Swift
+//  
+//  Ported from: https://github.com/PhilipsHue/PhilipsHueSDK-iOS-OSX/blob/master/QuickStartApp_iOS/HueQuickStartApp-iOS/PHAppDelegate.m
 //
 //  Created by Kevin Dew on 22/01/2015.
 //  Copyright (c) 2015 KevinDew. All rights reserved.
@@ -220,7 +222,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
                 // Results were found, show options to user (from a user point of view, you should select automatically when there is only one bridge found)
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let bridgeViewController = storyboard.instantiateViewControllerWithIdentifier("BridgeSelection") as BridgeSelectionViewController
-                bridgeViewController.bridgesFound = bridgesFound
+                bridgeViewController.bridgesFound = (bridgesFound as [String: String])
                 bridgeViewController.delegate = self
                 let navController = UINavigationController(rootViewController: bridgeViewController)
                 self.navigationController!.presentViewController(navController, animated: true, completion: nil)

@@ -23,6 +23,7 @@
 		DE67127D1A79B1B500ED6035 /* BridgePushLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE67127C1A79B1B500ED6035 /* BridgePushLinkViewController.swift */; };
 		DE6712811A79B7A300ED6035 /* BridgeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6712801A79B7A300ED6035 /* BridgeSelectionViewController.swift */; };
 		DE6712831A79B8EE00ED6035 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6712821A79B8EE00ED6035 /* LoadingViewController.swift */; };
+		DE8575771A7B0A0100FFED44 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DE8575761A7B0A0100FFED44 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DE67127C1A79B1B500ED6035 /* BridgePushLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgePushLinkViewController.swift; sourceTree = "<group>"; };
 		DE6712801A79B7A300ED6035 /* BridgeSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BridgeSelectionViewController.swift; sourceTree = "<group>"; };
 		DE6712821A79B8EE00ED6035 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		DE8575761A7B0A0100FFED44 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		DE625B481A7078D8004296E9 = {
 			isa = PBXGroup;
 			children = (
+				DE8575761A7B0A0100FFED44 /* README.md */,
 				DE625B791A7078F5004296E9 /* Framework */,
 				DE625B531A7078D8004296E9 /* Hue Quick Start iOS Swift */,
 				DE625B521A7078D8004296E9 /* Products */,
@@ -220,6 +223,7 @@
 				DE625BB21A707BE7004296E9 /* DDASLLogger.m in Sources */,
 				DE625BB91A707E59004296E9 /* ControlLightsViewController.swift in Sources */,
 				DE625B571A7078D8004296E9 /* AppDelegate.swift in Sources */,
+				DE8575771A7B0A0100FFED44 /* README.md in Sources */,
 				DE625BB71A707BE7004296E9 /* DispatchQueueLogFormatter.m in Sources */,
 				DE625BB11A707BE7004296E9 /* DDAbstractDatabaseLogger.m in Sources */,
 				DE625BB51A707BE7004296E9 /* DDTTYLogger.m in Sources */,
