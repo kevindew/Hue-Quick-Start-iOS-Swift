@@ -10,6 +10,11 @@
 
 import UIKit
 
+protocol BridgePushLinkViewControllerDelegate {
+    func pushLinkSuccess()
+    func pushLinkFailure(error: PHError)
+}    
+
 class BridgePushLinkViewController: UIViewController {
 
     override func viewDidLoad() {

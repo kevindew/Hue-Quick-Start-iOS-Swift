@@ -199,7 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         phHueSdk.disableLocalConnection()
     }
     
-    // MARK: - Bridge searching and selection
+    // MARK: - Bridge searching
     
     /// Search for bridges using UPnP and portal discovery, shows results to user or gives error when none found.
     func searchForBridgeLocal() {
@@ -255,25 +255,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         }
     }
     
-    /// Delegate method for BridgeSelectionViewController which is invoked when a bridge is selected
-    func bridgeSelectedWithIpAddress(ipAddress:String, andMacAddress macAddress:String) {
-        // Removing the selection view controller takes us to the 'normal' UI view
-        window!.rootViewController! .dismissViewControllerAnimated(true, completion: nil)
-        
-        // Show a connecting view while we try to connect to the bridge
-        showLoadingViewWithText(NSLocalizedString("Connecting", comment: "Connecting text"))
-        
-        // Set the username, ipaddress and mac address, as the bridge properties that the SDK framework will use
-        phHueSdk.setBridgeToUseWithIpAddress(ipAddress, macAddress: macAddress)
-        
-        // Setting the hearbeat running will cause the SDK to regularly update the cache with the status of the bridge resources
-        let delay = 1 * Double(NSEC_PER_SEC)
-        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue()) {
-            self.enableLocalHeartbeat()
-        }
-    }
-    
     // MARK: - Bridge authentication
     
     /// Start the local authentication process
@@ -308,6 +289,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
     
     // Removes the full screen loading overlay.
     func removeLoadingView() {
+    }
+}
+
+// MARK: - BridgeSelectionViewControllerDelegate
+extension AppDelegate: BridgeSelectionViewControllerDelegate {
+
+    /// Delegate method for BridgeSelectionViewController which is invoked when a bridge is selected
+    func bridgeSelectedWithIpAddress(ipAddress:String, andMacAddress macAddress:String) {
+        // Removing the selection view controller takes us to the 'normal' UI view
+        window!.rootViewController! .dismissViewControllerAnimated(true, completion: nil)
+        
+        // Show a connecting view while we try to connect to the bridge
+        showLoadingViewWithText(NSLocalizedString("Connecting", comment: "Connecting text"))
+        
+        // Set the username, ipaddress and mac address, as the bridge properties that the SDK framework will use
+        phHueSdk.setBridgeToUseWithIpAddress(ipAddress, macAddress: macAddress)
+        
+        // Setting the hearbeat running will cause the SDK to regularly update the cache with the status of the bridge resources
+        let delay = 1 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.enableLocalHeartbeat()
+        }
     }
 }
 
