@@ -44,11 +44,11 @@ class BridgeSelectionViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bridgesFound!.count
     }
@@ -74,51 +74,20 @@ class BridgeSelectionViewController: UITableViewController {
         return "Please select a SmartBridge to use for this application"
     }
     
-    // MARK: Table View Delegate
+    // MARK: - Table View Delegate
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // Sort bridges by mac address
+        let keys = [String](bridgesFound!.keys)
+        let sortedKeys = keys.sorted { $0.caseInsensitiveCompare($1) == NSComparisonResult.OrderedAscending }
+        
+        // The choice of bridge to use is made, store the mac and ip address for this bridge
+        
+        // Get mac address and ip address of selected bridge
+        let mac = sortedKeys[indexPath.row]
+        let ip = bridgesFound![mac]!
+        
+        // Inform delegate
+        delegate?.bridgeSelectedWithIpAddress(ip, andMacAddress: mac)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         // Saves changes in the application's managed object context before the application terminates.
     }
     
-    // MARK: HueSDK
+    // MARK: - HueSDK
     
     /// Notification receiver for successful local connection
     func localConnection() {
@@ -180,7 +180,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         window!.rootViewController!.presentViewController(noConnectionAlert!, animated: true, completion: nil)
     }
     
-    // MARK: Heartbeat control
+    // MARK: - Heartbeat control
     
     /// Starts the local heartbeat with a 10 second interval
     func enableLocalHeartbeat() {
@@ -199,7 +199,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         phHueSdk.disableLocalConnection()
     }
     
-    // MARK: Bridge searching and selection
+    // MARK: - Bridge searching and selection
     
     /// Search for bridges using UPnP and portal discovery, shows results to user or gives error when none found.
     func searchForBridgeLocal() {
@@ -274,7 +274,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         }
     }
     
-    // MARK: Bridge authentication
+    // MARK: - Bridge authentication
     
     /// Start the local authentication process
     func doAuthentication() {
