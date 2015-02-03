@@ -14,12 +14,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewControllerDelegate {
 
     // Create sdk instance
-    let phHueSdk:PHHueSDK = PHHueSDK()
+    let phHueSdk: PHHueSDK = PHHueSDK()
     var window: UIWindow?
     var navigationController: UINavigationController?
     var noConnectionAlert: UIAlertController?
     var noBridgeFoundAlert: UIAlertController?
-    var authenticationFailedAlert: UIAlertView?
+    var authenticationFailedAlert: UIAlertController?
+    var loadingView: LoadingViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         phHueSdk.startUpSDK()
@@ -64,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         noConnectionAlert = nil
         noBridgeFoundAlert?.dismissViewControllerAnimated(false, completion: nil)
         noBridgeFoundAlert = nil
-        authenticationFailedAlert?.dismissWithClickedButtonIndex(authenticationFailedAlert!.cancelButtonIndex, animated: false)
+        authenticationFailedAlert?.dismissViewControllerAnimated(false, completion: nil)
         authenticationFailedAlert = nil
     }
 
@@ -264,7 +265,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         // To be certain that we own this bridge we must manually push link it. Here we display the view to do this.
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let pushLinkViewController = storyboard.instantiateViewControllerWithIdentifier("BridgePushLink") as BridgePushLinkViewController
-        
+        pushLinkViewController.phHueSdk = phHueSdk
+        pushLinkViewController.delegate = self
         navigationController?.presentViewController(
             pushLinkViewController,
             animated: true,
@@ -273,22 +275,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         })
     }
     
-    // Delegate method for PHBridgePushLinkViewController which is invoked if the pushlinking was successfull
-    func pushlinkSuccess() {
-    }
-    
-    // Delegate method for PHBridgePushLinkViewController which is invoked if the pushlinking was not successfull
-    func pushlinkFailed(error: PHError) {
-    }
-    
     // MARK: - Loading view
     
-    // Shows an overlay over the whole screen with a black box with spinner and loading text in the middle
+    /// Shows an overlay over the whole screen with a black box with spinner and loading text in the middle
+    /// :param: text The text to display under the spinner
     func showLoadingViewWithText(text:String) {
+        // First remove
+        removeLoadingView()
+        
+        // Then add new
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        loadingView = storyboard.instantiateViewControllerWithIdentifier("Loading") as? LoadingViewController
+        loadingView!.view.frame = navigationController!.view.bounds
+        navigationController?.view.addSubview(loadingView!.view)
+        loadingView!.loadingLabel?.text = text
     }
     
-    // Removes the full screen loading overlay.
+    /// Removes the full screen loading overlay.
     func removeLoadingView() {
+        loadingView?.view.removeFromSuperview()
+        loadingView = nil
     }
 }
 
@@ -311,6 +317,72 @@ extension AppDelegate: BridgeSelectionViewControllerDelegate {
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue()) {
             self.enableLocalHeartbeat()
+        }
+    }
+}
+
+// MARK: - BridgePushLinkViewControllerDelegate
+extension AppDelegate: BridgePushLinkViewControllerDelegate {
+    
+    /// Delegate method for PHBridgePushLinkViewController which is invoked if the pushlinking was successfull
+    func pushlinkSuccess() {
+        // Push linking succeeded we are authenticated against the chosen bridge.
+        
+        // Remove pushlink view controller
+        navigationController!.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Start local heartbeat
+        let delay = 1 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue()) {
+            self.enableLocalHeartbeat()
+        }
+    }
+
+    /// Delegate method for PHBridgePushLinkViewController which is invoked if the pushlinking was not successfull
+    func pushlinkFailed(error: PHError) {
+        // Remove pushlink view controller
+        navigationController!.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Check which error occured
+        if error.code == Int(PUSHLINK_NO_CONNECTION.value) {
+            noLocalConnection()
+            
+            // Start local heartbeat (to see when connection comes back)
+            let delay = 1 * Double(NSEC_PER_SEC)
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+            dispatch_after(time, dispatch_get_main_queue()) {
+                self.enableLocalHeartbeat()
+            }
+        } else {
+            // Bridge button not pressed in time
+            authenticationFailedAlert = UIAlertController(
+                title: NSLocalizedString("Authentication failed", comment: "Authentication failed alert title"),
+                message: NSLocalizedString("Make sure you press the button within 30 seconds", comment: "Authentication failed alert message"),
+                preferredStyle: .Alert
+            )
+            
+            let retryAction = UIAlertAction(
+                title: NSLocalizedString("Retry", comment: "Authentication failed alert retry button"),
+                style: .Default
+            ) { (_) in
+                // Retry authentication
+                self.doAuthentication()
+            }
+            authenticationFailedAlert!.addAction(retryAction)
+            
+            let cancelAction = UIAlertAction(
+                title: NSLocalizedString("Cancel", comment: "Authentication failed cancel button"),
+                style: .Cancel
+            ) { (_) in
+                // Remove connecting loading message
+                self.removeLoadingView()
+                // Cancel authentication and disable local heartbeat unit started manually again
+                self.disableLocalHeartbeat()
+            }
+            authenticationFailedAlert!.addAction(cancelAction)
+            
+            window!.rootViewController!.presentViewController(authenticationFailedAlert!, animated: true, completion: nil)
         }
     }
 }
