@@ -29,7 +29,7 @@ class BridgeSelectionViewController: UITableViewController {
     title = "Available Smart Bridges"
     
     let refreshBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh,
-      target: self, action: "refreshButtonClicked")
+      target: self, action: "refreshButtonClicked:")
     navigationItem.rightBarButtonItem = refreshBarButtonItem
   }
   
