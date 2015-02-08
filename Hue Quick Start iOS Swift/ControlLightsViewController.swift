@@ -96,12 +96,21 @@ class ControlLightsViewController: UIViewController {
     let bridgeSendAPI = PHBridgeSendAPI()
     
     for light in cache!.lights!.values {
+      // don't update state of non-reachable lights
+      if light.lightState!.reachable == 0 {
+        continue
+      }
       
       let lightState = PHLightState()
       
-      lightState.hue = Int(arc4random()) % maxHue
-      lightState.brightness = 254
-      lightState.saturation = 254
+      if light.type.value == DIM_LIGHT.value {
+        // Lux bulbs just get a random brightness
+        lightState.brightness = Int(arc4random()) % 254
+      } else {
+        lightState.hue = Int(arc4random()) % maxHue
+        lightState.brightness = 254
+        lightState.saturation = 254
+      }
       
       // Send lightstate to light
       bridgeSendAPI.updateLightStateForId(light.identifier, withLightState: lightState, completionHandler: { (errors: [AnyObject]!) -> () in
