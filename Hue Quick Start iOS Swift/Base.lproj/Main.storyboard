@@ -243,13 +243,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q4J-t2-IB8">
-                                <rect key="frame" x="217" y="557" width="166" height="2"/>
+                                <rect key="frame" x="34" y="557" width="531" height="2"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="166" id="Zkf-LG-vlw"/>
                                     <constraint firstAttribute="width" constant="166" id="tTL-uG-e05"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="Zkf-LG-vlw"/>
                                         <exclude reference="tTL-uG-e05"/>
                                     </mask>
                                 </variation>
@@ -300,6 +301,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q4J-t2-IB8" secondAttribute="trailing" constant="25" id="PHi-zC-c3P"/>
+                            <constraint firstItem="Q4J-t2-IB8" firstAttribute="leading" secondItem="aOo-wO-4RT" secondAttribute="leadingMargin" constant="25" id="QAo-7R-iJj"/>
                             <constraint firstAttribute="centerY" secondItem="oaw-rx-7O4" secondAttribute="centerY" id="Qci-Cu-fuH"/>
                             <constraint firstItem="Q4J-t2-IB8" firstAttribute="centerX" secondItem="oaw-rx-7O4" secondAttribute="centerX" id="Wr7-E7-jlA"/>
                             <constraint firstItem="Q4J-t2-IB8" firstAttribute="centerX" secondItem="aOo-wO-4RT" secondAttribute="centerX" id="n43-Pz-Ted"/>
@@ -312,7 +315,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MvA-eD-JQS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792.5" y="361.5"/>
+            <point key="canvasLocation" x="1792" y="361"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="WyJ-hK-8f8">
