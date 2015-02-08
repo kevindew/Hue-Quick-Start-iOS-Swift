@@ -99,18 +99,15 @@ class ControlLightsViewController: UIViewController {
       
       let lightState = PHLightState()
       
-      lightState.hue = Int(arc4random()) * maxHue
+      lightState.hue = Int(arc4random()) % maxHue
       lightState.brightness = 254
       lightState.saturation = 254
       
       // Send lightstate to light
       bridgeSendAPI.updateLightStateForId(light.identifier, withLightState: lightState, completionHandler: { (errors: [AnyObject]!) -> () in
         
-        let errorsArr = errors as? [NSError]
-        
-        if errorsArr != nil {
-          let message = String(format: NSLocalizedString("Errors", comment: ""), arguments: errorsArr!)
-          
+        if errors != nil {
+          let message = String(format: NSLocalizedString("Errors %@", comment: ""), errors)
           NSLog("Response: \(message)")
         }
         self.randomLightsButton?.enabled = true

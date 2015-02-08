@@ -108,7 +108,7 @@
                                     <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="285" y="141" width="145" height="21"/>
+                                    <rect key="frame" x="395" y="145" width="145" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -161,20 +161,20 @@
                                 <exclude reference="oXO-Hk-lrk"/>
                                 <exclude reference="5qE-bK-0bm"/>
                                 <exclude reference="9N0-h8-sFo"/>
-                                <exclude reference="5EN-aA-4nT"/>
-                                <exclude reference="i6R-Tu-iI7"/>
-                                <exclude reference="zvn-Ia-sKq"/>
                                 <exclude reference="87y-6l-aHt"/>
                                 <exclude reference="Nmj-VB-xij"/>
                                 <exclude reference="ndY-wa-Dxw"/>
+                                <exclude reference="5EN-aA-4nT"/>
+                                <exclude reference="i6R-Tu-iI7"/>
+                                <exclude reference="zvn-Ia-sKq"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="constraints">
                                 <include reference="9N0-h8-sFo"/>
+                                <exclude reference="165-dM-XVk"/>
                                 <exclude reference="9iV-8j-HiR"/>
                                 <include reference="i6R-Tu-iI7"/>
-                                <exclude reference="165-dM-XVk"/>
                             </mask>
                         </variation>
                     </view>
