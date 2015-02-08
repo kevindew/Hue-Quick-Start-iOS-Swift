@@ -21,13 +21,6 @@ class BridgePushLinkViewController: UIViewController {
   var phHueSdk: PHHueSDK!
   var delegate: BridgePushLinkViewControllerDelegate!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    // Make it a form on iPad
-    modalPresentationStyle = UIModalPresentationStyle.FormSheet
-  }
-  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

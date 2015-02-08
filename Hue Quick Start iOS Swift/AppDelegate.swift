@@ -226,6 +226,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
         bridgeViewController.bridgesFound = (bridgesFound as [String: String])
         bridgeViewController.delegate = self
         let navController = UINavigationController(rootViewController: bridgeViewController)
+        // Make it a form on iPad
+        navController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
         self.navigationController!.presentViewController(navController, animated: true, completion: nil)
         
       } else {
@@ -265,6 +267,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, BridgeSelectionViewContro
     // To be certain that we own this bridge we must manually push link it. Here we display the view to do this.
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let pushLinkViewController = storyboard.instantiateViewControllerWithIdentifier("BridgePushLink") as BridgePushLinkViewController
+    // Make it a form on iPad
+    pushLinkViewController.modalPresentationStyle = UIModalPresentationStyle.FormSheet
     pushLinkViewController.phHueSdk = phHueSdk
     pushLinkViewController.delegate = self
     navigationController?.presentViewController(

@@ -22,9 +22,6 @@ class BridgeSelectionViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Make it a form on iPad
-    modalPresentationStyle = UIModalPresentationStyle.FormSheet
-    
     // Set title of screen
     title = "Available Smart Bridges"
     
